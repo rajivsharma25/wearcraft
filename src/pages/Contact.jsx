@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Input } from '../components/ui/input';
@@ -6,6 +7,27 @@ import { Label } from '../components/ui/label';
 import { Button } from '../components/ui/button';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form Submitted:', formData);
+        // Reset form or show success message here
+        alert('Message sent! Successfully');
+        setFormData({ name: '', email: '', message: '' });
+    };
     return (
         <div className="container mx-auto px-4 py-16">
             <h1 className="text-3xl font-bold text-center mb-12">Contact Us</h1>
@@ -16,7 +38,7 @@ const Contact = () => {
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
                         <p className="text-muted-foreground">
-                            Have questions about our products or your order? We're here to help!
+                            Have questions about our products or your order? We&apos;re here to help!
                         </p>
                     </div>
 
@@ -63,18 +85,38 @@ const Contact = () => {
                         <CardTitle>Send us a Message</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="space-y-2">
                                 <Label htmlFor="name">Name</Label>
-                                <Input id="name" placeholder="Your Name" />
+                                <Input 
+                                    id="name" 
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Your Name" 
+                                    required
+                                />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="email">Email</Label>
-                                <Input id="email" type="email" placeholder="your@email.com" />
+                                <Input 
+                                    id="email" 
+                                    type="email" 
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="your@email.com" 
+                                    required
+                                />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="message">Message</Label>
-                                <Textarea id="message" placeholder="How can we help?" rows={4} />
+                                <Textarea 
+                                    id="message" 
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="How can we help?" 
+                                    rows={4} 
+                                    required
+                                />
                             </div>
                             <Button type="submit" className="w-full">
                                 Send Message
