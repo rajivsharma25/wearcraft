@@ -15,21 +15,6 @@ WearCraft is a modern, responsive e-commerce application built with React, Vite,
 
 ## Tech Stack
 
-- **Frontend Framework**: [React](https://react.dev/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Shadcn UI](https://ui.shadcn.com/)
-- **Routing**: [React Router](https://reactrouter.com/)
-- **State Management**: React Context API
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Form Handling**: React Hook Form + Zod
-- **HTTP Client**: Axios
-- **API**: [FakeStoreAPI](https://fakestoreapi.com/)
-
-## Installation
-
-1.  **Clone the repository**:
-
     ```bash
     git clone https://github.com/yourusername/wearcraft.git
     cd wearcraft
