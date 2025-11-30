@@ -32,7 +32,7 @@ const Home = () => {
       id: 1,
       image: hero_img_1,
       title: "Discover Your Style",
-      description: "Explore the latest trends and timeless classics. Elevate your wardrobe with our curated collection.",
+      description: "Explore the latest trends and timeless classics. Elevate your wardrobe with our collection.",
       primaryLink: "/products",
       primaryText: "View All",
       secondaryLink: "/products?category=women's clothing",
@@ -196,8 +196,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold">Featured Products</h2>
-            <Link to="/products" className="flex items-center text-primary hover:underline">
-              View All <ArrowRight className="ml-1 w-4 h-4" />
+            <Link to="/products" className="flex items-center text-primary hover:underline shrink-0">
+              View All
             </Link>
           </div>
           {loading ? (
